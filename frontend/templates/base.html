@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-    <title>Django Tailwind</title>
+    <title>oUPS</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -20,7 +20,8 @@
 
 			<div class="flex-1 flex justify-center items-center p-1 sm:p-4">
 				<div class="w-full max-w-5xl h-full min-h-[300px] rounded-lg border-2 border-gray-200 shadow-sm bg-white">
-					
+					{% block "interaction" %}
+					{% endblock %}
 				</div>
 			</div>
 
