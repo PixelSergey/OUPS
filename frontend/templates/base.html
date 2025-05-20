@@ -10,29 +10,38 @@
 	</head>
 
 	<body class="bg-gray-50 font-serif leading-normal tracking-normal">
-		<div class="container mx-auto">
-			<section class="flex items-center justify-center h-screen">
-				<h1 class="text-5xl">Django + Tailwind = ❤️</h1>
-			</section>
-		</div>
-		<div class="bg-white py-24 sm:py-32">
-		<div class="mx-auto max-w-7xl px-6 lg:px-8">
-			<dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
-			<div class="mx-auto flex max-w-xs flex-col gap-y-4">
-				<dt class="text-base/7 text-gray-600">Transactions every 24 hours</dt>
-				<dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">44 million</dd>
+		<div class="container mx-auto h-screen flex flex-col justify-between px-2 sm:px-4">
+			<div class="p-3 sm:p-6 flex justify-center">
+				<div class="flex items-center gap-3 sm:gap-4">
+					<img src="{% static 'oups_logo.svg' %}" alt="OUPS Logo" class="h-10 w-auto sm:h-14 md:h-16">
+					<h1 class="text-2xl sm:text-3xl md:text-4xl text-center">Oxford University Pigeonhole Service</h1>
+				</div>
 			</div>
-			<div class="mx-auto flex max-w-xs flex-col gap-y-4">
-				<dt class="text-base/7 text-gray-600">Assets under holding</dt>
-				<dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">$119 trillion</dd>
-			</div>
-			<div class="mx-auto flex max-w-xs flex-col gap-y-4">
-				<dt class="text-base/7 text-gray-600">New users annually</dt>
-				<dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">46,000</dd>
-			</div>
-			</dl>
-		</div>
-		</div>
 
+			<div class="flex-1 flex justify-center items-center p-1 sm:p-4">
+				<div class="w-full max-w-5xl h-full min-h-[300px] rounded-lg border-2 border-gray-200 shadow-sm bg-white">
+					
+				</div>
+			</div>
+
+			<div class="p-2 sm:p-4">
+				<div class="mx-auto max-w-5xl px-1 sm:px-4 lg:px-6">
+					<dl class="grid grid-cols-3 gap-x-1 gap-y-4 text-center sm:gap-x-4 sm:gap-y-8 lg:gap-x-0">
+						<div class="mx-auto w-[95px] sm:w-[180px] h-[95px] sm:h-[120px] flex flex-col justify-center gap-y-1 sm:gap-y-4 p-2 sm:p-4 rounded-lg shadow-md bg-white">
+							<dt class="text-[11px] sm:text-base text-gray-600">Total letters sent</dt>
+							<dd class="order-first text-base sm:text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">1337</dd>
+						</div>
+						<div class="mx-auto w-[95px] sm:w-[180px] h-[95px] sm:h-[120px] flex flex-col justify-center gap-y-1 sm:gap-y-4 p-2 sm:p-4 rounded-lg shadow-md bg-white">
+							<dt class="text-[11px] sm:text-base text-gray-600">Letters in the queue</dt>
+							<dd class="order-first text-base sm:text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">20</dd>
+						</div>
+						<div class="mx-auto w-[95px] sm:w-[180px] h-[95px] sm:h-[120px] flex flex-col justify-center gap-y-1 sm:gap-y-4 p-2 sm:p-4 rounded-lg shadow-md bg-white">
+							<dt class="text-[11px] sm:text-base text-gray-600">Registered postmen</dt>
+							<dd class="order-first text-base sm:text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">7</dd>
+						</div>
+					</dl>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
