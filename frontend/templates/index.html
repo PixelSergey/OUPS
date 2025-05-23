@@ -1,106 +1,62 @@
 {% extends "base.html" %}
 {% block "interaction" %}
-<div class="flex justify-center items-center h-full p-4 sm:p-6 relative">
-	<!-- Hamburger Menu Button -->
-	<button id="menuButton" class="absolute top-4 right-4 p-2 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500">
-		<svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-		</svg>
-	</button>
+<div class="flex flex-col h-full">
+    <div class="container text-center mt-5 flex-1 flex flex-col">
+        <div>
+            <h1 class="text-xl sm:text-xl md:text-xl font-semibold tracking-tight text-gray-900 mb-4">What is this?</h1>
+            
+            <p class="lead mb-5 px-8 sm:px-16 md:px-24" style="max-width: 800px; margin: 0 auto;">
+                oUPS lets you send a letter directly to someone's pigeonhole.
+                Volunteer delivery people (pigeons) will print and deliver your message.<br>
+                This is just for fun and totally free :)
+            </p>
 
-	<!-- Navigation Menu -->
-	<div id="menu" class="hidden absolute top-16 right-4 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-		<div class="py-1" role="menu" aria-orientation="vertical">
-			<a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Send a letter</a>
-			<a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Deliver letters</a>
-		</div>
-	</div>
+            <div class="grid grid-cols-1 md:grid-cols-2 max-w-2xl mx-auto">
+                <div>
+                    <h1 class="text-xl sm:text-xl md:text-xl font-semibold tracking-tight text-gray-900 mt-4">Ideas for what to send</h1>
 
-	<form action="/submit" method="post" enctype="multipart/form-data" class="w-full max-w-2xl space-y-4 flex flex-col h-full mt-8 pb-4">
-		{% csrf_token %}
-		<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-			<div class="flex flex-col">
-				<label for="addressee" class="block text-lg sm:text-sm font-medium text-gray-700 mb-1">To</label>
-				<input type="text" id="addressee" name="addressee" class="h-12 sm:h-10 w-full px-3 py-2 text-lg sm:text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500" placeholder="Recipient name">
-			</div>
+                    <p class="lead mb-5 px-8 sm:px-16 md:px-24" style="max-width: 800px; margin: 0 auto;">
+                        <ul class="list-disc list-inside mt-2 space-y-1">
+                            <li>Say hi to your homie</li>
+                            <li>Send a letter to your crush &lt;3</li>
+                            <li>Send out party invites</li>
+                            <li>Play correspondence chess</li>
+                        </ul>
+                    </p>
+                </div>
 
-			<div class="flex flex-col">
-				<label for="college" class="block text-lg sm:text-sm font-medium text-gray-700 mb-1">College</label>
-				<select id="college" name="college" class="h-12 sm:h-10 w-full px-3 py-2 text-lg sm:text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500">
-					<option value="">Select a college...</option>
-					<option value="all_souls">All Souls College</option>
-					<option value="balliol">Balliol College</option>
-					<option value="blackfriars">Blackfriars</option>
-					<option value="brasenose">Brasenose College</option>
-					<option value="campion_hall">Campion Hall</option>
-					<option value="christ_church">Christ Church</option>
-					<option value="corpus_christi">Corpus Christi College</option>
-					<option value="exeter">Exeter College</option>
-					<option value="green_templeton">Green Templeton College</option>
-					<option value="harris_manchester">Harris Manchester College</option>
-					<option value="hertford">Hertford College</option>
-					<option value="jesus">Jesus College</option>
-					<option value="keble">Keble College</option>
-					<option value="kellogg">Kellogg College</option>
-					<option value="lady_margaret_hall">Lady Margaret Hall</option>
-					<option value="linacre">Linacre College</option>
-					<option value="lincoln">Lincoln College</option>
-					<option value="magdalen">Magdalen College</option>
-					<option value="mansfield">Mansfield College</option>
-					<option value="merton">Merton College</option>
-					<option value="new">New College</option>
-					<option value="nuffield">Nuffield College</option>
-					<option value="oriel">Oriel College</option>
-					<option value="pembroke">Pembroke College</option>
-					<option value="queens">The Queen's College</option>
-					<option value="regents_park">Regent's Park College</option>
-					<option value="reuben">Reuben College</option>
-					<option value="st_annes">St Anne's College</option>
-					<option value="st_antonys">St Antony's College</option>
-					<option value="st_catherines">St Catherine's College</option>
-					<option value="st_cross">St Cross College</option>
-					<option value="st_edmund_hall">St Edmund Hall</option>
-					<option value="st_hildas">St Hilda's College</option>
-					<option value="st_hughs">St Hugh's College</option>
-					<option value="st_johns">St John's College</option>
-					<option value="st_peters">St Peter's College</option>
-					<option value="somerville">Somerville College</option>
-					<option value="trinity">Trinity College</option>
-					<option value="university">University College</option>
-					<option value="wadham">Wadham College</option>
-					<option value="wolfson">Wolfson College</option>
-					<option value="worcester">Worcester College</option>
-					<option value="wycliffe_hall">Wycliffe Hall</option>
-				</select>
-			</div>
-		</div>
+                <div>
+                    <h1 class="text-xl sm:text-xl md:text-xl font-semibold tracking-tight text-gray-900 mt-4">Why would I volunteer?</h1>
 
-		<div class="flex-1 flex flex-col min-h-0">
-			<label for="message" class="block text-lg sm:text-sm font-medium text-gray-700 mb-1">Message</label>
-			<textarea id="message" name="message" class="flex-1 w-full px-3 py-2 text-lg sm:text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500" placeholder="Write your message here..."></textarea>
-		</div>
+                    <p class="lead mb-5 px-8 sm:px-16 md:px-24" style="max-width: 800px; margin: 0 auto;">
+                        <ul class="list-disc list-inside mt-2 space-y-1">
+                            <li>Explore all the Oxford colleges</li>
+                            <li>Get all the tea</li>
+                            <li>Get a free oUPS t-shirt (maybe)</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
 
-		<div class="flex justify-center">
-			<button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-semibold text-lg sm:text-sm py-3 px-6 rounded-lg shadow-md transition-colors duration-200">
-				Send letter
-			</button>
-		</div>
-	</form>
-
-	<script>
-		document.getElementById('menuButton').addEventListener('click', function() {
-			const menu = document.getElementById('menu');
-			menu.classList.toggle('hidden');
-		});
-
-		// Close menu when clicking outside
-		document.addEventListener('click', function(event) {
-			const menu = document.getElementById('menu');
-			const menuButton = document.getElementById('menuButton');
-			if (!menuButton.contains(event.target) && !menu.contains(event.target)) {
-				menu.classList.add('hidden');
-			}
-		});
-	</script>
+        <div class="mt-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 max-w-2xl mx-auto gap-4 pb-5">
+                <div class="flex justify-center">
+                    <a href="/send">
+                        <button type="button" class="bg-green-600 hover:bg-green-700 text-white font-semibold text-lg sm:text-sm py-3 px-6 rounded-lg shadow-md transition-colors duration-200">
+                            Send letter
+                        </button>
+                    </a>
+                </div>
+                <div class="flex justify-center">
+                    <a href="/deliver">
+                        <button type="button" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold text-lg sm:text-sm py-3 px-6 rounded-lg shadow-md transition-colors duration-200">
+                            Deliver mail
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
