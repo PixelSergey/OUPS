@@ -12,7 +12,13 @@ def submit(request):
     college = request.POST.get("college")
     message = request.POST.get("message")
 
-    if not all(addressee, college, message):
+    if not all((addressee, college, message)):
+        return redirect("/")
+    
+    if not len(message) <= 280:
+        return redirect("/")
+    
+    if not len(addressee) <= 50:
         return redirect("/")
 
     letter = models.Letter(
@@ -21,7 +27,6 @@ def submit(request):
         message=message,
         status=models.Letter.LetterStatus.SENT,
     )
-
     letter.save()
 
     return redirect("/")
